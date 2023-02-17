@@ -3,6 +3,7 @@ package is.hi.hbv202g.ass5;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -35,4 +36,13 @@ public class IntStackTest {
         assertFalse(stack.isFull());
     }
 
+    @Test
+    public void testPopReturnsPushedValue() {
+        int number1 = 385;
+        int number2 = 384658;
+        stack.push(number1);
+        stack.push(number2);
+        assertEquals(number2, stack.pop());
+        assertEquals(number1, stack.pop());
+    }
 }
